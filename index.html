@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trung Trần (Kevin) · Tư vấn tài chính cá nhân</title>
+<meta name="description" content="Trung Trần (Kevin), chuyên viên khách hàng cá nhân tại TBT Bank. 5 năm tư vấn tiết kiệm, tín dụng, bảo hiểm, thẻ và ngân hàng số cho hơn 3.000 khách hàng.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --ground:#F1E0D3;
+  --paper:#FFF8F2;
+  --coffee:#2A1A12;
+  --coffee-2:#4A3226;
+  --honey:#F2A62C;
+  --honey-soft:#FFD97D;
+  --olive:#51692F;
+  --olive-ink:#FFFFFF;
+  --pad:clamp(16px,4vw,48px);
+  --head:'Bricolage Grotesque','Be Vietnam Pro',system-ui,'Segoe UI',Roboto,Arial,sans-serif;
+  --font:'Be Vietnam Pro',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ground);color:var(--coffee);font-family:var(--font);font-size:1.0625rem;line-height:1.65;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--coffee);outline-offset:3px}
+.dark :focus-visible{outline-color:var(--honey)}
+h1,h2,h3{font-family:var(--head);font-weight:800;letter-spacing:-.025em;line-height:1.05;text-wrap:balance}
+h1{font-size:clamp(2.3rem,7.2vw + .4rem,4.4rem);line-height:1.14}
+h2{font-size:clamp(2rem,5vw + .4rem,4rem);max-width:12em}
+h3{font-size:clamp(1.35rem,1.4vw + .9rem,1.9rem)}
+.wrap{padding-inline:var(--pad);max-width:1240px;margin-inline:auto}
+
+/* bubbles */
+.bub{position:relative;padding:18px 22px;border-radius:26px;max-width:36em;width:fit-content}
+.bub p+p{margin-top:12px}
+.bub.k{background:var(--coffee);color:var(--paper);border-bottom-left-radius:6px}
+.bub.g{background:var(--paper);color:var(--coffee);border:2px solid var(--coffee);border-bottom-right-radius:6px;margin-left:auto}
+.bub.h{background:var(--honey);color:var(--coffee);border-bottom-left-radius:6px}
+.bub.o{background:var(--olive);color:var(--olive-ink);border-bottom-right-radius:6px;margin-left:auto}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 28px;border:2px solid var(--coffee);border-radius:999px;background:var(--honey);color:var(--coffee);font:700 1rem/1.2 var(--font);text-decoration:none;cursor:pointer;transition:transform .2s cubic-bezier(.2,.7,.2,1),background-color .2s}
+.btn:hover{transform:translateY(-3px) rotate(-1deg);background:var(--honey-soft)}
+.btn:active{transform:none}
+.btn.small{min-height:44px;padding:10px 24px}
+.btn[aria-disabled="true"]{background:transparent;color:#CDB9A8;border-color:#7A6252;cursor:not-allowed;transform:none}
+.dark .btn{border-color:var(--paper)}
+.dark .btn:not([aria-disabled="true"]){background:var(--honey);color:var(--coffee);border-color:var(--honey)}
+
+/* nav */
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px var(--pad);max-width:1240px;margin-inline:auto}
+.brand{font-family:var(--head);font-weight:800;text-decoration:none;font-size:1.15rem;letter-spacing:-.02em}
+.nav ul{display:flex;gap:22px;list-style:none;align-items:center}
+.nav a:not(.btn){text-decoration:none;font-weight:500}
+.nav a:not(.btn):hover{text-decoration:underline;text-underline-offset:5px}
+
+/* hero */
+.hero{display:grid;gap:20px;padding-top:12px;padding-bottom:clamp(88px,12vw,136px);position:relative}
+.hero h1{max-width:11em}
+.portrait{justify-self:end;width:min(76%,340px);aspect-ratio:4/5;border-radius:999px 999px 28px 28px;overflow:hidden;background:#5c6066;border:3px solid var(--coffee);position:relative}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 14%}
+.hero-talk{display:grid;gap:18px;margin-top:-64px;position:relative;z-index:1;justify-items:start}
+.hero-talk .bub{max-width:30em}
+
+/* numbers */
+.dark{background:var(--coffee);color:var(--paper)}
+.numbers{padding:clamp(56px,9vw,112px) 0}
+.numbers .wrap{display:grid;gap:36px}
+.num{display:grid;gap:4px}
+.num b{font-family:var(--head);font-weight:800;line-height:.9;letter-spacing:-.04em;font-size:clamp(4.2rem,22vw,9.5rem);color:var(--honey)}
+.num span{max-width:15em}
+.num:nth-child(2){justify-self:end;text-align:right}
+.num:nth-child(2) span{margin-left:auto}
+.num:nth-child(3) b{color:var(--paper)}
+
+/* needs */
+.section{padding-block:clamp(64px,9vw,120px)}
+.needs .intro{display:grid;gap:22px;justify-items:start}
+.tool{display:none;margin-top:34px}
+.js .tool{display:block}
+.tool fieldset{border:0;display:grid;gap:12px;justify-items:end}
+.tool legend{font-weight:700;margin-bottom:14px;justify-self:start;float:left;width:100%}
+.chip{display:block}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-flex;align-items:center;min-height:52px;padding:14px 26px;background:var(--paper);border:2px solid var(--coffee);border-radius:26px 26px 6px 26px;font-weight:500;cursor:pointer;transition:transform .2s cubic-bezier(.2,.7,.2,1),background-color .2s}
+.chip span:hover{transform:translateX(-4px)}
+.chip input:checked + span{background:var(--honey);font-weight:700}
+.chip input:focus-visible + span{outline:3px solid var(--coffee);outline-offset:3px}
+.answer{margin-top:24px;min-height:3.4em}
+.answer:empty{display:none}
+.answer b{font-weight:700}
+.answer a{color:var(--honey-soft)}
+.products{margin-top:48px;display:grid;gap:22px}
+.product{padding:22px 22px 24px;border:2px solid var(--coffee);border-radius:28px;background:var(--paper);transition:background-color .35s,transform .35s;display:grid;gap:12px;width:min(100%,640px)}
+.product:nth-child(even){margin-left:auto}
+.product.hit{background:var(--honey);transform:scale(1.015)}
+.product .ask{font-weight:500;padding:14px 18px;border-radius:18px 18px 18px 4px;background:var(--coffee);color:var(--paper)}
+
+/* story */
+.story{background:var(--olive);color:var(--olive-ink)}
+.story :focus-visible{outline-color:var(--honey-soft)}
+.story .top{display:grid;gap:24px;margin-bottom:44px}
+.pull{font-family:var(--head);font-weight:700;font-size:clamp(1.5rem,2.4vw + .9rem,2.6rem);line-height:1.15;letter-spacing:-.015em;max-width:18em;color:var(--honey-soft)}
+.thread{display:grid;gap:22px}
+.turn{display:grid;gap:8px;max-width:38em}
+.turn h3{font-size:1.15rem;letter-spacing:-.01em;padding-left:6px}
+.turn .bub{max-width:none;width:auto}
+.turn:nth-child(odd) .bub{background:var(--paper);color:var(--coffee);border-bottom-left-radius:6px}
+.turn:nth-child(even){margin-left:auto}
+.turn:nth-child(even) h3{text-align:right;padding-right:6px}
+.turn:nth-child(even) .bub{background:var(--coffee);color:var(--paper);border-radius:26px 26px 6px 26px;margin-left:0}
+.typing{display:inline-flex;gap:6px;padding:16px 20px;border-radius:26px;background:var(--paper);width:fit-content}
+.typing i{width:9px;height:9px;border-radius:50%;background:var(--coffee-2);animation:dot 1s infinite ease-in-out}
+.typing i:nth-child(2){animation-delay:.15s}
+.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,80%,100%{transform:translateY(0);opacity:.4}40%{transform:translateY(-6px);opacity:1}}
+
+/* skills */
+.skills ul{list-style:none;display:grid;gap:14px;margin-top:36px}
+.skills li{padding:18px 30px;border:2px solid var(--coffee);border-radius:999px;font-weight:700;background:var(--paper);width:fit-content;max-width:100%}
+.skills li:nth-child(2){margin-left:clamp(12px,12vw,120px);background:var(--honey)}
+.skills li:nth-child(3){margin-left:clamp(0px,5vw,48px)}
+.skills li:nth-child(4){margin-left:clamp(12px,16vw,200px);background:var(--honey-soft)}
+.skills li:nth-child(5){margin-left:clamp(4px,8vw,80px);background:var(--coffee);color:var(--paper)}
+
+/* contact */
+.contact{padding:clamp(64px,9vw,120px) 0}
+.contact .wrap{display:grid;gap:28px}
+.contact .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.note{margin-top:0}
+footer{background:var(--coffee);color:var(--paper);padding:0 0 40px}
+footer .wrap{border-top:2px solid var(--coffee-2);padding-top:28px;display:grid;gap:8px}
+.foot-name{font-family:var(--head);font-weight:800;font-size:1.4rem;letter-spacing:-.02em}
+.foot-note{max-width:44em;color:#E0D2C4}
+
+/* motion */
+@media (prefers-reduced-motion:no-preference){
+  .js [data-r]{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.7,.2,1) var(--d,0ms),transform .6s cubic-bezier(.2,.7,.2,1) var(--d,0ms)}
+  .js [data-r].in{opacity:1;transform:none}
+  }
+@media (prefers-reduced-motion:reduce){.typing i{animation:none}}
+
+/* desktop */
+@media (min-width:861px){
+  .nav ul li:not(:last-child){display:list-item}
+  .hero{grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);align-items:end;column-gap:48px;padding-bottom:96px}
+  .hero h1{grid-column:1;grid-row:1;align-self:end;padding-bottom:24px}
+  .portrait{grid-column:2;grid-row:1 / span 2;width:min(100%,460px);transform:translateY(24px) rotate(2deg)}
+  .hero-talk{grid-column:1;grid-row:2;margin-top:0;align-self:start}
+    .numbers .wrap{grid-template-columns:repeat(3,minmax(0,1fr));align-items:end;gap:48px}
+  .num:nth-child(2){justify-self:stretch;margin-bottom:56px}
+  .num:nth-child(3){margin-top:0}
+  .needs .intro{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end;gap:48px}
+  .tool fieldset{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:14px}
+  .tool legend{text-align:right}
+  .num b{font-size:clamp(3.4rem,7.4vw,7rem);white-space:nowrap}
+  .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start}
+  .product,.product:nth-child(even){width:auto;margin:0}
+  .product:nth-child(even){margin-top:48px}
+  .product:nth-child(5){grid-column:1}
+  .story .top{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:end;gap:48px}
+  .thread{gap:30px}
+  .turn{max-width:46%}
+  .turn:nth-child(even){margin-left:auto}
+  .turn:nth-child(3){margin-left:12%}
+  .turn:nth-child(4){margin-left:auto;margin-right:6%}
+  .skills{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px;align-items:start}
+  .skills ul{margin-top:0}
+  .contact .wrap{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:48px}
+}
+@media (max-width:860px){
+  .nav ul li:not(:last-child){display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#top">Trung Trần (Kevin)</a>
+  <nav aria-label="Chính">
+    <ul>
+      <li><a href="#giup">Mình có thể giúp gì</a></li>
+      <li><a href="#cau-chuyen">Câu chuyện</a></li>
+      <li><a class="btn small" href="#lien-he">Liên hệ</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+<section class="hero wrap" aria-labelledby="h-hero">
+  <h1 id="h-hero" data-r>Lắng nghe trước, tư vấn sau</h1>
+  <div class="portrait" data-r style="--d:100ms">
+    <img src="anh-chan-dung.jpg" width="864" height="865" alt="Chân dung Trung Trần (Kevin), áo sơ mi trắng">
+  </div>
+  <div class="hero-talk">
+    <div class="bub k" data-r style="--d:150ms">
+      <p>Mình là Trung Trần (Kevin), chuyên viên khách hàng cá nhân tại TBT Bank. Năm năm qua mình đồng hành cùng hơn 3.000 khách hàng về tiết kiệm, tín dụng, bảo hiểm, thẻ và ngân hàng số.</p>
+    </div>
+    <a class="btn" href="#giup" data-r style="--d:250ms">Tìm giải pháp cho bạn</a>
+  </div>
+</section>
+
+<section class="dark numbers" aria-label="Thành tích">
+  <div class="wrap">
+    <div class="num" data-r><b>3.000+</b><span>khách hàng đã được mình tư vấn</span></div>
+    <div class="num" data-r style="--d:100ms"><b>3 lần</b><span>được bình chọn Chuyên viên xuất sắc của năm</span></div>
+    <div class="num" data-r style="--d:200ms"><b>5 năm</b><span>làm tư vấn tài chính cá nhân</span></div>
+  </div>
+</section>
+
+<section class="section wrap needs" id="giup" aria-labelledby="h-giup">
+  <div class="intro">
+    <h2 id="h-giup" data-r>Bạn đang lo điều gì?</h2>
+    <div class="bub k" data-r style="--d:80ms"><p>Đây cũng là câu đầu tiên mình hỏi mỗi khách hàng. Chọn điều gần với bạn nhất, mình sẽ chỉ ra nhóm sản phẩm nên xem trước.</p></div>
+  </div>
+
+  <div class="tool">
+    <fieldset>
+      <legend>Điều bạn quan tâm lúc này</legend>
+      <label class="chip"><input type="radio" name="need" value="con"><span>Chuẩn bị cho tương lai của con</span></label>
+      <label class="chip"><input type="radio" name="need" value="gd"><span>Bảo vệ gia đình trước rủi ro</span></label>
+      <label class="chip"><input type="radio" name="need" value="kd"><span>Cần vốn cho việc kinh doanh</span></label>
+      <label class="chip"><input type="radio" name="need" value="gui"><span>Có tiền nhàn rỗi, muốn gửi sinh lời</span></label>
+      <label class="chip"><input type="radio" name="need" value="chi"><span>Muốn chi tiêu gọn và an toàn hơn</span></label>
+      <label class="chip"><input type="radio" name="need" value="so"><span>Cả nhà cùng quản lý tiền trên điện thoại</span></label>
+    </fieldset>
+    <div class="bub k answer" id="answer" aria-live="polite"></div>
+  </div>
+
+  <div class="products">
+    <article class="product" id="tiet-kiem" data-r>
+      <h3>Tiết kiệm</h3>
+      <p>Tiền nhàn rỗi, quỹ học tập cho con, khoản dự phòng cho gia đình: mỗi mục tiêu có một cách gửi phù hợp. Mình giúp bạn chọn kỳ hạn và cách gửi hợp với kế hoạch dùng tiền thật của bạn.</p>
+      <p class="ask">Mình thường hỏi trước: bao giờ bạn sẽ cần dùng khoản tiền này?</p>
+    </article>
+    <article class="product" id="tin-dung" data-r>
+      <h3>Tín dụng</h3>
+      <p>Vay cho nhu cầu cá nhân và vốn cho việc kinh doanh. Mình xem dòng tiền của bạn trước, rồi mới đề xuất khoản vay và cách trả để việc vay giúp bạn đi nhanh hơn thay vì thêm gánh nặng.</p>
+      <p class="ask">Mình thường hỏi trước: khoản vốn này sẽ mang lại điều gì cho bạn?</p>
+    </article>
+    <article class="product" id="bao-hiem" data-r>
+      <h3>Bảo hiểm</h3>
+      <p>Bảo vệ những người bạn thương khi có điều bất ngờ xảy ra. Mình giải thích rõ quyền lợi và điều kiện bằng lời dễ hiểu, và chỉ gợi ý phần bạn thực sự cần.</p>
+      <p class="ask">Mình thường hỏi trước: ai trong gia đình đang phụ thuộc vào thu nhập của bạn?</p>
+    </article>
+    <article class="product" id="the" data-r>
+      <h3>Thẻ</h3>
+      <p>Thẻ cho chi tiêu hằng ngày, mua sắm và du lịch. Mình giúp bạn chọn loại thẻ khớp với thói quen chi tiêu của bạn, và cách dùng để luôn chủ động với tiền của mình.</p>
+      <p class="ask">Mình thường hỏi trước: bạn chi tiêu nhiều nhất vào đâu mỗi tháng?</p>
+    </article>
+    <article class="product" id="ngan-hang-so" data-r>
+      <h3>Ngân hàng số</h3>
+      <p>Làm mọi việc với tiền ngay trên điện thoại, kể cả ngân hàng gia đình để cả nhà cùng xem và quản lý tài chính trên một ứng dụng. Mình hướng dẫn tận tay từ lần đầu.</p>
+      <p class="ask">Mình thường hỏi trước: trong nhà ai đang lo chuyện tiền bạc, và ai cần xem cùng?</p>
+    </article>
+  </div>
+</section>
+
+<section class="story section" id="cau-chuyen" aria-labelledby="h-story">
+  <div class="wrap">
+    <div class="top">
+      <h2 id="h-story" data-r>Một người mẹ làm kinh doanh</h2>
+      <p class="pull" data-r style="--d:100ms">Nỗi trăn trở lớn nhất của chị là tương lai của các con.</p>
+    </div>
+    <div class="thread">
+      <div class="turn" data-chat>
+        <h3>Mình nghe trước</h3>
+        <div class="bub"><p>Năm thứ ba đi làm, mình gặp một chị khoảng năm mươi tuổi, làm kinh doanh, hoàn cảnh khá giả. Lúc đầu mình chỉ muốn làm quen để có thể đồng hành lâu dài, chưa tư vấn gì sâu. Sau một thời gian trò chuyện, chị bắt đầu chia sẻ nỗi lo cho bản thân, cho con cái và cho gia đình sau này.</p></div>
+      </div>
+      <div class="turn" data-chat>
+        <h3>Mình hỏi thêm, chưa vội gợi ý</h3>
+        <div class="bub"><p>Chị có ba con: hai bạn lớn và một bạn còn nhỏ vì sinh muộn. Chị vừa bận kinh doanh vừa phải lo chuyện học hành, sức khỏe của các con. Mình hỏi nhiều hơn để hiểu nhu cầu thật của chị, rồi mới nghĩ xem sản phẩm nào gắn với nhu cầu ấy.</p></div>
+      </div>
+      <div class="turn" data-chat>
+        <h3>Rồi mới gắn với sản phẩm</h3>
+        <div class="bub"><p>Mình xin chị cho mình tư vấn hai thứ: sản phẩm tiết kiệm tương lai cho con, và ngân hàng gia đình để cả nhà cùng quản lý tài chính trên ứng dụng. Hôm sau chị liên hệ lại, hẹn gặp để chuẩn bị hồ sơ.</p></div>
+      </div>
+      <div class="turn" data-chat>
+        <h3>Chị quay lại</h3>
+        <div class="bub"><p>Những lần sau, chị thường rủ mình ngồi cà phê, và nhờ mình tư vấn thêm cả những sản phẩm mới cho việc kinh doanh của chị. Từ đó mình giữ một nguyên tắc: bắt đầu từ cuộc sống của khách hàng, không bắt đầu từ sản phẩm.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap skills" aria-labelledby="h-skills">
+  <h2 id="h-skills" data-r>Mình làm việc thế nào</h2>
+  <ul>
+    <li data-r>Lắng nghe và khai thác nhu cầu khách hàng</li>
+    <li data-r>Đối chiếu nhu cầu với sản phẩm phù hợp</li>
+    <li data-r>Tư vấn và thuyết phục bằng sự rõ ràng</li>
+    <li data-r>Quản lý quan hệ khách hàng lâu dài</li>
+    <li data-r>Xây dựng quy trình phát triển khách hàng</li>
+  </ul>
+</section>
+
+<section class="dark contact" id="lien-he" aria-labelledby="h-contact">
+  <div class="wrap">
+    <h2 id="h-contact" data-r>Lưu liên hệ của mình, khi cần cứ nhắn</h2>
+    <div data-r style="--d:100ms">
+      <p class="note" id="contact-note">Số điện thoại và Zalo sẽ được cập nhật sớm.</p>
+      <div class="btns">
+        <a class="btn" id="btn-call" href="#lien-he" aria-disabled="true">Gọi cho Kevin</a>
+        <a class="btn" id="btn-zalo" href="#lien-he" aria-disabled="true">Nhắn Zalo</a>
+        <a class="btn" id="btn-save" href="#lien-he" aria-disabled="true">Lưu vào danh bạ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="dark">
+  <div class="wrap">
+    <div class="foot-name">Trung Trần (Kevin)</div>
+    <p class="foot-note">Chuyên viên khách hàng cá nhân, TBT Bank. Nội dung trên trang mang tính giới thiệu; điều kiện sản phẩm theo quy định của TBT Bank tại thời điểm tư vấn.</p>
+  </div>
+</footer>
+
+<script>
+/* ── Thông tin liên hệ: điền vào đây là các nút tự bật ──
+   phone: số điện thoại, ví dụ '0901234567'
+   zalo:  số Zalo (thường trùng số điện thoại)               */
+var CONTACT = { phone: '', zalo: '' };
+
+(function () {
+  /* Nút liên hệ */
+  var note = document.getElementById('contact-note');
+  var call = document.getElementById('btn-call');
+  var zalo = document.getElementById('btn-zalo');
+  var save = document.getElementById('btn-save');
+  function enable(a, href) { a.href = href; a.removeAttribute('aria-disabled'); }
+  var digits = function (s) { return (s || '').replace(/[^\d+]/g, ''); };
+  if (digits(CONTACT.phone)) {
+    enable(call, 'tel:' + digits(CONTACT.phone));
+    enable(save, '#lien-he');
+    save.addEventListener('click', function (e) {
+      e.preventDefault();
+      var v = 'BEGIN:VCARD\r\nVERSION:3.0\r\nFN:Trung Trần (Kevin)\r\nN:Trần;Trung;;;\r\nORG:TBT Bank\r\nTITLE:Chuyên viên khách hàng cá nhân\r\nTEL;TYPE=CELL:' + digits(CONTACT.phone) + '\r\nEND:VCARD\r\n';
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([v], { type: 'text/vcard' }));
+      a.download = 'Trung-Tran-Kevin.vcf';
+      document.body.appendChild(a); a.click(); a.remove();
+    });
+  }
+  if (digits(CONTACT.zalo)) enable(zalo, 'https://zalo.me/' + digits(CONTACT.zalo));
+  if (digits(CONTACT.phone) || digits(CONTACT.zalo)) note.textContent = 'Bấm một nút bên dưới, mình sẽ phản hồi sớm nhất có thể.';
+  [call, zalo, save].forEach(function (a) {
+    a.addEventListener('click', function (e) { if (a.getAttribute('aria-disabled') === 'true') e.preventDefault(); });
+  });
+
+  /* Chọn nhu cầu → gợi ý sản phẩm */
+  var map = {
+    con:  { ids: ['tiet-kiem', 'ngan-hang-so'], q: 'Bạn dự định cho con bắt đầu cần khoản này vào lúc nào, và ai trong nhà cùng lo chuyện này?' },
+    gd:   { ids: ['bao-hiem'], q: 'Ai trong gia đình đang phụ thuộc vào thu nhập của bạn?' },
+    kd:   { ids: ['tin-dung'], q: 'Khoản vốn này sẽ mang lại điều gì cho việc kinh doanh của bạn?' },
+    gui:  { ids: ['tiet-kiem'], q: 'Bao giờ bạn sẽ cần dùng khoản tiền này?' },
+    chi:  { ids: ['the', 'ngan-hang-so'], q: 'Mỗi tháng bạn chi tiêu nhiều nhất vào đâu?' },
+    so:   { ids: ['ngan-hang-so'], q: 'Trong nhà ai đang lo chuyện tiền bạc, và ai cần xem cùng?' }
+  };
+  var names = { 'tiet-kiem': 'Tiết kiệm', 'tin-dung': 'Tín dụng', 'bao-hiem': 'Bảo hiểm', 'the': 'Thẻ', 'ngan-hang-so': 'Ngân hàng số' };
+  var answer = document.getElementById('answer');
+  var rows = document.querySelectorAll('.product');
+  document.querySelectorAll('input[name="need"]').forEach(function (r) {
+    r.addEventListener('change', function () {
+      var m = map[r.value];
+      rows.forEach(function (row) { row.classList.toggle('hit', m.ids.indexOf(row.id) > -1); });
+      var links = m.ids.map(function (id) { return '<a href="#' + id + '"><b>' + names[id] + '</b></a>'; }).join(' và ');
+      answer.innerHTML = 'Bạn nên xem trước: ' + links + '. Nếu gặp nhau, mình sẽ hỏi bạn đầu tiên: “' + m.q + '”';
+    });
+  });
+
+  /* Hiện dần khi cuộn */
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('[data-r]');
+  var chats = document.querySelectorAll('[data-chat]');
+  if (!('IntersectionObserver' in window) || reduce) {
+    items.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  items.forEach(function (el) { io.observe(el); });
+
+  /* Câu chuyện hiện từng đoạn, có dấu ba chấm "đang gõ" */
+  chats.forEach(function (turn) {
+    var bub = turn.querySelector('.bub');
+    bub.style.display = 'none';
+    var dots = document.createElement('div');
+    dots.className = 'typing';
+    dots.setAttribute('aria-hidden', 'true');
+    dots.innerHTML = '<i></i><i></i><i></i>';
+    dots.style.display = 'none';
+    if (turn.matches(':nth-child(even)')) dots.style.marginLeft = 'auto';
+    turn.appendChild(dots);
+  });
+  var cio = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var turn = e.target; cio.unobserve(turn);
+      var bub = turn.querySelector('.bub'), dots = turn.querySelector('.typing');
+      dots.style.display = 'inline-flex';
+      setTimeout(function () {
+        dots.remove();
+        bub.style.display = '';
+      }, 650);
+    });
+  }, { threshold: 0.35 });
+  chats.forEach(function (t) { cio.observe(t); });
+})();
+</script>
+</body>
+</html>
